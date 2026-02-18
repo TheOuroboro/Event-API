@@ -1,5 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const auth = require("../middleware/authMiddleware");
+const authorize = require("../middleware/roleMiddleware");
+
+
 const { 
   getAllEvents, 
   getEventById, 
@@ -12,7 +16,10 @@ const {
 router.get('/', getAllEvents);
 router.get('/:id', getEventById);
 
-// Organizer Only (We will add Auth Middleware here later)
+// Organizer Only 
+router.post("/", auth, authorize("ORGANIZER"), createEvent);
+
+//
 router.post('/', createEvent);
 router.put('/:id', updateEvent);
 router.delete('/:id', deleteEvent);
