@@ -2,15 +2,9 @@
 // npm install --save-dev prisma dotenv
 const { defineConfig } = require("prisma/config");
 
-// We don't need 'import' or 'dotenv/config' here because 
-// Render and Prisma automatically load the environment variables.
 module.exports = defineConfig({
   schema: "prisma/schema.prisma",
-  migrations: {
-    path: "prisma/migrations",
-  },
   datasource: {
-    // This looks for the variable set in the Render Dashboard
-    url: process.env.DATABASE_URL, 
+    url: process.env.DATABASE_URL,
   },
 });
