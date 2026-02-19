@@ -1,5 +1,5 @@
 const { prisma } = require('../config/database');
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const {} = require ("../utils/password")
 const { generateToken } = require('../utils/jwt');
