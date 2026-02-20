@@ -3,6 +3,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const {} = require ("../utils/password")
 const { generateToken } = require('../utils/jwt');
+const {hashPassword} = require("../utils/password")
 
 // Register user
 const register = async (req, res) => {
