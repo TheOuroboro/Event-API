@@ -8,10 +8,10 @@ const {hashPassword} = require("../utils/password")
 // Register user
 const register = async (req, res) => {
   try {
-    const { name, email, password, role } = req.body;
+    const {email, password, role } = req.body;
 
     //Basic Validation
-    if (!name || !email || !password) {
+    if (!email || !password) {
       return res.status(400).json({ message: "All fields are required" });
     }
 
@@ -26,7 +26,6 @@ const register = async (req, res) => {
 
     const user = await prisma.user.create({
       data: {
-        name,
         email,
         password: hashedPassword,
         role: role || "ATTENDEE"
