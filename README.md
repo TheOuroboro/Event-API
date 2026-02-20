@@ -5,15 +5,19 @@ This is a professional backend API for managing events, bookings, and user authe
 [Insert your Render URL here after deployment]
 
 - Tech Stack
-Runtime: Node.js
+Tech Stack Explanation
 
-Framework: Express.js
+Node.js & Express: Backend runtime and framework for handling HTTP requests.
 
-Database: PostgreSQL (via Neon)
+Prisma ORM: Modern database toolkit for type-safe database access and migrations.
 
-ORM: Prisma
+PostgreSQL: Relational database for structured data storage (hosted on Render/Neon).
 
-Authentication: JWT (JSON Web Tokens) & Bcrypt
+JWT (Json Web Token): For secure, stateless user authentication.
+
+Joi: Schema description language and data validator for JavaScript.
+
+Bcryptjs: For hashing passwords to ensure security.
 
 - Architecture Overview
 The project follows a Modular Layered Architecture to ensure clean code and separation of concerns:

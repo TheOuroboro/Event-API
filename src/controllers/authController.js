@@ -38,7 +38,12 @@ const register = async (req, res) => {
     });
 
   } catch (error) {
-    res.status(500).json({ error: "Registration failed. Please try again." });
+    console.error("DETAILED ERROR:", error); // This will show up in your Render Logs
+    res.status(500).json({ 
+        message: "Registration failed", 
+        error: error.message, // This will show up in Postman
+        stack: error.stack 
+    });
   }
 };
 

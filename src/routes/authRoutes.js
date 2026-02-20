@@ -8,7 +8,7 @@ const { registerSchema, loginSchema } = require('../validators/authValidator');
 // Import the  controller functions
 const { register, login } = require('../controllers/authController');
 
-// 3. Applying validation before the controller logic
+// Applying validation before the controller logic
 // Registration: validates name, email, password, and roles 
 router.post('/register', validate(registerSchema), register);
 

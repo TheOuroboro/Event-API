@@ -1,4 +1,3 @@
-// src/config/env.js (or just env.js)
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }

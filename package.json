@@ -9,7 +9,9 @@
     "mysql": "^2.18.1",
     "pg": "^8.18.0",
     "postgres": "^3.4.8",
-    "sql": "^0.78.0"
+    "sql": "^0.78.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "@types/node": "^25.2.3",
