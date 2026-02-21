@@ -44,7 +44,7 @@ const getAllEvents = async (req, res) => {
   }
 };
 
-// POST /events (Organizer only)
+// Create Event(Organizer only)
 const createEvent = async (req, res) => {
   try {
     const { title, description, location, date, ticketPrice, totalSeats } = req.body;
@@ -77,7 +77,7 @@ const getEventById = async (req, res) => {
       where: { id },
       include: {
         organizer: {
-          select: { name: true, email: true }
+          select: {email: true }
         },
         _count: {
           select: { bookings: true }
