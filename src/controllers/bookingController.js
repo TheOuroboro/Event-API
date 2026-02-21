@@ -105,13 +105,13 @@ const cancelBooking = async (req, res) => {
   try {
     const { id } = req.params;
 
-    // 1. Find the booking and check if the user owns it
+    // Find the booking and check if the user owns it
     const booking = await prisma.booking.findUnique({ where: { id } });
     if (!booking || booking.userId !== req.user.id) {
       return res.status(404).json({ message: "Booking not found" });
     }
 
-    // 2. Use transaction to restore the seats and delete/update booking
+    // Use transaction to restore the seats and delete/update booking
     await prisma.$transaction(async (tx) => {
       // Restore seats
       await tx.event.update({
