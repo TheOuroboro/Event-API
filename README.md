@@ -3,12 +3,12 @@
 
 A robust backend system for managing events and attendee bookings, built with **Node.js**, **Express**, and **Prisma ORM**.
 
-## 🚀 Live Links
+## Live Links
 
 * **Documentation:** (https://documenter.getpostman.com/view/50827294/2sBXcEkLRt)
 * **Deployed API:** `https://event-api-exzc.onrender.com`
 
-## 🛠 Features
+## Features
 
 * **User Authentication:** Secure JWT-based registration and login.
 * **Role-Based Access Control (RBAC):** * `ORGANIZER`: Can create, update, and delete events.
@@ -18,7 +18,7 @@ A robust backend system for managing events and attendee bookings, built with **
 * **Atomic Bookings:** Uses **Prisma Transactions** to ensure ticket quantities are updated accurately and prevent overbooking.
 * **Validation:** Strict request body validation using **Joi**.
 
-## 🏗 Tech Stack
+## Tech Stack
 
 * **Runtime:** Node.js
 * **Framework:** Express.js
@@ -26,7 +26,7 @@ A robust backend system for managing events and attendee bookings, built with **
 * **ORM:** Prisma
 * **Security:** JSON Web Tokens (JWT) & Bcrypt
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 ├── src
@@ -40,7 +40,7 @@ A robust backend system for managing events and attendee bookings, built with **
 
 ```
 
-## 🚦 Getting Started
+## Getting Started
 
 ### 1. Clone the repository
 
@@ -64,7 +64,7 @@ Create a `.env` file in the root directory:
 ```env
 DATABASE_URL="yourpersona; _postgresql_connection_string"
 JWT_SECRET="your_super_secret_key"
-PORT=10000
+PORT=10000  //used on render || PORT = 5000 // used on personal environments
 
 ```
 
@@ -82,7 +82,7 @@ npm start
 
 ```
 
-## 🧪 API Endpoints (Quick Summary)
+##  API Endpoints (Quick Summary)
 
 | Method | Endpoint | Access | Description |
 | --- | --- | --- | --- |

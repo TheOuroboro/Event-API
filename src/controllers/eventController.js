@@ -6,10 +6,10 @@ const getAllEvents = async (req, res) => {
   try {
     const { page, limit, location, status } = req.query; 
 
-    // 1. Use the utility to get skip/take values
+    // Use the utility to get skip/take values
     const { skip, take, p, l } = getPagination(page, limit);
 
-    // 2. Fetch events and total count simultaneously
+    // Fetch events and total count simultaneously
     const [events, totalItems] = await Promise.all([
       prisma.event.findMany({
         where: {
@@ -28,7 +28,7 @@ const getAllEvents = async (req, res) => {
       })
     ]);
 
-    // 3. Return with standardized pagination metadata
+    // Return with standardized pagination metadata
     res.status(200).json({ 
       success: true,
       pagination: {

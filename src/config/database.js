@@ -16,9 +16,9 @@ const connectDB = async () => {
   try {
     // We use $connect to verify the pool can actually reach the DB
     await prisma.$connect();
-    console.log("🐘 Prisma 7 connected to PostgreSQL via Pool.");
+    console.log(" Prisma 7 connected to PostgreSQL via Pool.");
   } catch (error) {
-    console.error("❌ Database connection error:", error.message);
+    console.error(" Database connection error:", error.message);
     process.exit(1);
   }
 };
@@ -30,7 +30,7 @@ const disconnectDB = async () => {
     await pool.end(); // Important! Also close the pg Pool
     console.log("🔌 Database connections closed.");
   } catch (error) {
-    console.error("❌ Error during disconnection:", error.message);
+    console.error(" Error during disconnection:", error.message);
   }
 };
 
