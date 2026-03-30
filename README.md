@@ -8,7 +8,7 @@ A robust backend system for managing events and attendee bookings, built with **
 * **Documentation:** (https://documenter.getpostman.com/view/50827294/2sBXcEkLRt)
 * **Deployed API:** `https://event-api-exzc.onrender.com`
 
-## 🛠 Features
+## Features
 
 * **User Authentication:** Secure JWT-based registration and login.
 * **Role-Based Access Control (RBAC):** * `ORGANIZER`: Can create, update, and delete events.
