@@ -28,7 +28,7 @@ const disconnectDB = async () => {
   try {
     await prisma.$disconnect();
     await pool.end(); // Important! Also close the pg Pool
-    console.log("🔌 Database connections closed.");
+    console.log("Database connections closed.");
   } catch (error) {
     console.error(" Error during disconnection:", error.message);
   }
