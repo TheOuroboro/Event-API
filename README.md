@@ -3,7 +3,7 @@
 
 A robust backend system for managing events and attendee bookings, built with **Node.js**, **Express**, and **Prisma ORM**.
 
-## Live Links
+## 🚀 Live Links
 
 * **Documentation:** (https://documenter.getpostman.com/view/50827294/2sBXcEkLRt)
 * **Deployed API:** `https://event-api-exzc.onrender.com`
@@ -82,7 +82,7 @@ npm start
 
 ```
 
-##  API Endpoints (Quick Summary)
+## 🧪 API Endpoints (Quick Summary)
 
 | Method | Endpoint | Access | Description |
 | --- | --- | --- | --- |
