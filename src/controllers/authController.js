@@ -12,7 +12,7 @@ const register = async (req, res) => {
 
     //Basic Validation
     if (!email || !password) {
-      return res.status(400).json({ message: "All fields are required" });
+      return res.status(400).json({ message: "Kindly fill all fields!" });
     }
 
     // Check if user already exists
@@ -33,12 +33,12 @@ const register = async (req, res) => {
     });
 
     res.status(201).json({
-      message: "User registered successfully",
+      message: "Registration Successful",
       user: { id: user.id, email: user.email, role: user.role }
     });
 
   } catch (error) {
-    console.error("DETAILED ERROR:", error); // This will show up in your Render Logs
+    console.error("DETAILED ERROR:", error); // This will show up in the Render Logs
     res.status(500).json({ 
         message: "Registration failed", 
         error: error.message, // This will show up in Postman
@@ -54,9 +54,16 @@ const login = async (req, res) => {
 
     // Input check
     if (!email || !password) {
-      return res.status(400).json({ message: "Email and password are required" });
+      return res.status(400).json({ message: "both fields requires are required" });
     }
-
+    //no password inputed
+    if (email || !password){
+      return res.status(400).json({message: "password required"})
+    }
+    //No Email inputed
+    if (!email || password){
+      return res.status(400).json({message: "email required"})
+    }
     const user = await prisma.user.findUnique({ where: { email } });
 
     // Existing Email
@@ -81,5 +88,9 @@ const login = async (req, res) => {
     res.status(500).json({ error: "Server error during login" });
   }
 };
+//Things to work on
+// Why is it only server error that is defined
+// Role should only be asked in login for admins
+//RBAC
 
 module.exports = { register, login };
