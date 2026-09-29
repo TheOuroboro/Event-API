@@ -87,7 +87,7 @@ const getEventBookings = async (req, res) => {
     const bookings = await prisma.booking.findMany({
       where: { eventId: id },
       include: {
-        user: { select: { name: true, email: true } }
+        user: { select: { email: true } }
       }
     });
 
