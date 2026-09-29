@@ -56,10 +56,7 @@ const login = async (req, res) => {
     if (!email || !password) {
       return res.status(400).json({ message: "both fields requires are required" });
     }
-    //no password inputed
-    if (email || !password){
-      return res.status(400).json({message: "password required"})
-    }
+ 
     const user = await prisma.user.findUnique({ where: { email } });
 
     // Existing Email
