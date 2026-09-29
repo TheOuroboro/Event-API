@@ -43,19 +43,16 @@ const createBooking = async (req, res) => {
       data: result
     });
 
-  } catch (error) {
-   //Check for double-booking (Is there already a booking for this user and event?)
-    const existingBooking = await prisma.booking.findFirst({
-      where: {
-        eventId: eventId,
-        userId: userId
-      }
-    });
-
-    if (existingBooking) {
-      return res.status(400).json({ success: false, message: "You have already booked a ticket for this event" });
+  }  catch (error) {
+    // Unique constraint (eventId + userId) means the user already booked this event
+    if (error.code === 'P2002') {
+      return res.status(400).json({
+        success: false,
+        message: "You have already booked a ticket for this event"
+      });
     }
-};
+    return res.status(400).json({ success: false, message: error.message });
+  }
 };
 
 // GET /bookings (Attendee sees ONLY their own bookings)

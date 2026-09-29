@@ -7,6 +7,7 @@ const eventRoutes = require('./routes/eventRoutes');
 const bookingRoutes = require('./routes/bookingRoutes');
 
 // Middleware
+app.use(require('cors')())
 app.use(express.json());
 
 // Apply Routes
